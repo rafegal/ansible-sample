@@ -8,7 +8,6 @@
 
     - name: Generate config file primary
       command: touch /tmp/test_primary.txt
-      when: inventory_hostname in groups.primary # "'primary' in group_names" "'secondary' in group_names"
       register: out  
     - debug: var=out.stdout
 
