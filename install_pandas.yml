@@ -1,6 +1,5 @@
 - name: Install Pandas
-  # hosts: all
-  hosts: "{{ hosts | default('all') }}"
+  hosts: "{{ hosts }}"
   become: yes
   tasks:
     - name: Install pandas
