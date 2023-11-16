@@ -1,5 +1,7 @@
 - name: Install Pandas
-  hosts: all
+  # hosts: all
+  hosts: "{{ hosts | default('all') }}"
+  become: yes
   tasks:
     - name: Install pandas
       command: python3 -m pip install pandas
