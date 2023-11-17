@@ -17,6 +17,6 @@
       register: out  
     - debug: var=out.stdout
 
-    - name: Exibir variáveis específicas do host
+    - name: Exibir o valor de meu_parametro
       debug:
-        var: hostvars[inventory_hostname]
+        msg: "O valor de meu_parametro é {{ my_parameter }}"
