@@ -16,3 +16,7 @@
       command: ls /root/ -l
       register: out  
     - debug: var=out.stdout
+
+    - name: Exibir variáveis específicas do host
+      debug:
+        var: hostvars[inventory_hostname]
