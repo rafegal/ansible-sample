@@ -10,7 +10,7 @@
     - name: Generate config file primary
       copy:
         content: "{{ content_file }}"
-        dest: "/tmp/test_primary.txt"
+        dest: "/tmp/file_test.txt"
       when: generate_file == 1
       register: out  
     - debug: var=out.stdout
