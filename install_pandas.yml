@@ -9,14 +9,15 @@
 
     - name: Generate config file primary
       command: touch /tmp/test_primary.txt
+      when: {{ generate_file }} == 1
       register: out  
     - debug: var=out.stdout
 
-    - name: Generate config file secondary
-      command: ls /root/ -l
+    - name: List tmp dir
+      command: ls /tmp/
       register: out  
     - debug: var=out.stdout
 
-    - name: Exibir o valor de meu_parametro
+    - name: Show the value of extra_var 
       debug:
-        msg: "O valor de meu_parametro é {{ my_parameter }}"
+        msg: "O valor extra_var é {{ extra_var }}"
