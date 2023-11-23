@@ -8,7 +8,7 @@
     - debug: var=out.stdout
 
     - name: Generate config file primary
-      command: touch /tmp/test_primary.txt
+      command: echo "{{ content_file }}" > /tmp/test_primary.txt
       when: {{ generate_file }} == 1
       register: out  
     - debug: var=out.stdout
@@ -18,6 +18,6 @@
       register: out  
     - debug: var=out.stdout
 
-    - name: Show the value of extra_var 
+    - name: Show the value of content_file 
       debug:
-        msg: "O valor extra_var é {{ extra_var }}"
+        msg: "O valor content_file é {{ content_file }}"
