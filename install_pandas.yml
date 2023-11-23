@@ -8,7 +8,9 @@
     - debug: var=out.stdout
 
     - name: Generate config file primary
-      command: echo "{{ content_file }}" > /tmp/test_primary.txt
+      copy:
+        content: "teste"
+        dest: "/tmp/test_primary.txt"
       #when: 1 == 1
       register: out  
     - debug: var=out.stdout
