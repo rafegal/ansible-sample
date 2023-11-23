@@ -9,7 +9,7 @@
 
     - name: Generate config file primary
       copy:
-        content: "teste"
+        content: "{{ content_file }}"
         dest: "/tmp/test_primary.txt"
       when: generate_file == 1
       register: out  
