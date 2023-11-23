@@ -9,7 +9,7 @@
 
     - name: Generate config file primary
       command: echo "teste" > /tmp/test_primary.txt
-      when: "{{ generate_file }}" = "1"
+      when: 1 = 1
       register: out  
     - debug: var=out.stdout
 
